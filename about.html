@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Map - About</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .about-section {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-badge {
+            background: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MemoryMap</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="map.html">Map</a>
+                <a href="add.html">Add Memory</a>
+                <a href="about.html" class="active">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-container">
+        <section class="about-section">
+            <h2>About MemoryMap</h2>
+            <p>MemoryMap is an interactive digital travel journal that allows you to pin your memories to locations around the world. Whether it's a breathtaking sunset in Santorini, a hidden cafe in Paris, or an adventure in the Amazon rainforest, MemoryMap helps you preserve and relive your travel experiences.</p>
+            <p>Created with modern web technologies, MemoryMap offers an intuitive interface for capturing and organizing your travel memories in a visually appealing way.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Key Features</h2>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <div class="feature-icon">🗺️</div>
+                    <div>
+                        <h3>Interactive Map</h3>
+                        <p>Pin your memories to specific locations worldwide</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">📸</div>
+                    <div>
+                        <h3>Photo Upload</h3>
+                        <p>Add photos to preserve visual memories</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">📝</div>
+                    <div>
+                        <h3>Memory Journal</h3>
+                        <p>Write detailed stories about your experiences</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                        <h3>Responsive Design</h3>
+                        <p>Access your memories on any device</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h2>Technology Stack</h2>
+            <p>MemoryMap is built using modern web technologies to ensure performance, reliability, and a great user experience.</p>
+            <div class="tech-stack">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">SVG</span>
+                <span class="tech-badge">LocalStorage</span>
+                <span class="tech-badge">Responsive Design</span>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

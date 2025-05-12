@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Map - Interactive Map</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 1rem;
+            padding: 1rem;
+            height: calc(100vh - 60px);
+        }
+
+        .map-view {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .memory-panel {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .map-svg {
+            width: 100%;
+            height: 100%;
+            background-color: var(--light-gray);
+        }
+
+        .pin {
+            fill: var(--accent-color);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .pin:hover {
+            transform: scale(1.2);
+            fill: var(--primary-color);
+        }
+
+        .memory-card {
+            background: var(--background-color);
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .memory-date {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .map-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .map-view {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MemoryMap</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="map.html" class="active">Map</a>
+                <a href="add.html">Add Memory</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="map-container">
+        <div class="map-view">
+            <svg class="map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                <!-- Simplified World Map -->
+                <path d="M150,100 L850,100 L850,400 L150,400 Z" fill="none" stroke="#2c3e50" stroke-width="2"/>
+                <!-- Sample Pins -->
+                <circle class="pin" cx="300" cy="200" r="5" data-id="1"/>
+                <circle class="pin" cx="500" cy="250" r="5" data-id="2"/>
+                <circle class="pin" cx="700" cy="300" r="5" data-id="3"/>
+            </svg>
+        </div>
+        <div class="memory-panel" id="memoryPanel">
+            <h2>My Memories</h2>
+            <!-- Memory cards will be dynamically added here -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
