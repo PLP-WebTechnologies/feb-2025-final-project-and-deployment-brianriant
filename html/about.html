@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryMap - About</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <style>
+        .about-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: var(--background-color);
+            border-radius: 12px;
+            transition: var(--transition-base);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .feature-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .feature-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--background-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: var(--transition-base);
+        }
+
+        .tech-badge:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .team-section {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .mission-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mission-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-hero {
+                padding: 3rem 5%;
+            }
+
+            .about-container {
+                padding: 2rem 5%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MemoryMap</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="map.html">Map</a>
+                <a href="add.html">Add Memory</a>
+                <a href="about.html" class="active">About</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>About MemoryMap</h1>
+            <p>Transforming your travel experiences into lasting digital memories, one pin at a time.</p>
+        </section>
+
+        <div class="about-container">
+            <section class="mission-vision">
+                <div class="mission-card">
+                    <h3>Our Mission</h3>
+                    <p>To create a platform that helps travelers preserve and share their unique experiences through an intuitive and engaging digital journal.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>Our Vision</h3>
+                    <p>To become the go-to platform for travelers worldwide to document, organize, and relive their cherished travel memories.</p>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2>Key Features</h2>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <div class="feature-icon">🗺️</div>
+                        <div class="feature-content">
+                            <h3>Interactive Map</h3>
+                            <p>Pin your memories to specific locations worldwide and create a visual journey of your adventures.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">📸</div>
+                        <div class="feature-content">
+                            <h3>Photo Gallery</h3>
+                            <p>Upload and organize your travel photos with location context and detailed stories.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">📝</div>
+                        <div class="feature-content">
+                            <h3>Travel Journal</h3>
+                            <p>Document your experiences with rich text editing and multimedia support.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-content">
+                            <h3>Privacy Controls</h3>
+                            <p>Choose what to share and what to keep private with flexible privacy settings.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="about-section">
+                <h2>Technology Stack</h2>
+                <p>Built with modern web technologies to ensure a fast, reliable, and seamless experience.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">SVG</span>
+                    <span class="tech-badge">Local Storage</span>
+                    <span class="tech-badge">Leaflet.js</span>
+                    <span class="tech-badge">Responsive Design</span>
+                    <span class="tech-badge">Modern ES Modules</span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">MemoryMap</div>
+            <p class="footer-tagline">Your journey. Your memories. Your map.</p>
+            <p class="footer-copyright">&copy; 2025 MemoryMap. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/script.js"></script>
+</body>
+</html>

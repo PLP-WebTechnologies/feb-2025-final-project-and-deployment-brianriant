@@ -1,0 +1,25 @@
+// DOM Elements
+export const elements = {
+    hamburger: document.querySelector('.hamburger'),
+    navLinks: document.querySelector('.nav-links'),
+    memoryForm: document.getElementById('memoryForm'),
+    imagePreview: document.getElementById('imagePreview'),
+    previewContainer: document.querySelector('.preview-container'),
+    memoryPanel: document.getElementById('memoryPanel'),
+    mapSvg: document.querySelector('.map-svg'),
+    privacyFilter: document.getElementById('privacyFilter'),
+    zoomInBtn: document.getElementById('zoomIn'),
+    zoomOutBtn: document.getElementById('zoomOut'),
+    tagsContainer: document.querySelector('.tags-container'),
+    tagsInput: document.getElementById('tags'),
+    photoInput: document.getElementById('photo'),
+    searchLocationBtn: document.getElementById('searchLocationBtn'),
+    searchResults: document.getElementById('searchResults'),
+    coordinatesDisplay: document.querySelector('.coordinates-display'),
+    coordinatesText: document.getElementById('coordinatesText'),
+    editLocationBtn: document.getElementById('editLocation'),
+    locationInput: document.getElementById('location'),
+    searchInput: document.getElementById('locationSearch'),
+    searchBtn: document.getElementById('searchBtn'),
+    map: document.getElementById('map')
+};

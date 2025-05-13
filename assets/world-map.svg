@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="500" viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="continent" d="M480 120 L520 120 L540 140 L530 160 L510 170 L490 160 L470 140 L480 120" fill="#4a90e2" opacity="0.1"/>
+    <path class="continent" d="M200 180 L240 160 L280 170 L300 200 L280 220 L240 230 L210 210 L200 180" fill="#4a90e2" opacity="0.1"/>
+    <path class="continent" d="M600 200 L650 180 L690 190 L710 220 L690 250 L650 260 L620 240 L600 200" fill="#4a90e2" opacity="0.1"/>
+    <path class="continent" d="M350 250 L400 230 L440 240 L460 270 L440 300 L400 310 L370 290 L350 250" fill="#4a90e2" opacity="0.1"/>
+    <path class="continent" d="M100 300 L150 280 L190 290 L210 320 L190 350 L150 360 L120 340 L100 300" fill="#4a90e2" opacity="0.1"/>
+    <path class="continent" d="M800 280 L850 260 L890 270 L910 300 L890 330 L850 340 L820 320 L800 280" fill="#4a90e2" opacity="0.1"/>
+    <!-- Grid lines -->
+    <path d="M0 250 L1000 250" stroke="#4a90e2" stroke-width="1" opacity="0.05"/>
+    <path d="M500 0 L500 500" stroke="#4a90e2" stroke-width="1" opacity="0.05"/>
+    <!-- Latitude lines -->
+    <path d="M0 125 L1000 125" stroke="#4a90e2" stroke-width="1" opacity="0.05"/>
+    <path d="M0 375 L1000 375" stroke="#4a90e2" stroke-width="1" opacity="0.05"/>
+    <!-- Longitude lines -->
+    <path d="M250 0 L250 500" stroke="#4a90e2" stroke-width="1" opacity="0.05"/>
+    <path d="M750 0 L750 500" stroke="#4a90e2" stroke-width="1" opacity="0.05"/>
+</svg>
