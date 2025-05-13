@@ -20,6 +20,49 @@
             padding: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            position: relative;
+        }
+
+        .map-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 10;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        #privacyFilter {
+            padding: 0.5rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            background: var(--white);
+        }
+
+        .zoom-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .zoom-controls button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .zoom-controls button:hover {
+            background: var(--primary-color);
+            color: var(--white);
         }
 
         .memory-panel {
@@ -34,12 +77,24 @@
             width: 100%;
             height: 100%;
             background-color: var(--light-gray);
+            cursor: crosshair;
+        }
+
+        .continent {
+            fill: var(--white);
+            stroke: var(--secondary-color);
+            stroke-width: 1;
+            transition: fill 0.3s ease;
+        }
+
+        .continent:hover {
+            fill: var(--light-gray);
         }
 
         .pin {
             fill: var(--accent-color);
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .pin:hover {
@@ -47,24 +102,71 @@
             fill: var(--primary-color);
         }
 
+        .pin.private {
+            fill: var(--secondary-color);
+        }
+
         .memory-card {
             background: var(--background-color);
-            border-radius: 5px;
+            border-radius: 10px;
             padding: 1rem;
             margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
         }
 
         .memory-card img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
             border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .memory-card h3 {
+            color: var(--secondary-color);
             margin-bottom: 0.5rem;
+        }
+
+        .memory-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .memory-date {
             color: var(--secondary-color);
-            font-size: 0.9rem;
+        }
+
+        .memory-privacy {
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            background: var(--light-gray);
+            color: var(--secondary-color);
+        }
+
+        .memory-text {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .memory-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .memory-tag {
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            background: var(--primary-color);
+            color: var(--white);
+            font-size: 0.8rem;
         }
 
         @media screen and (max-width: 768px) {
@@ -75,6 +177,11 @@
 
             .map-view {
                 height: 50vh;
+            }
+
+            .map-controls {
+                flex-direction: column;
+                align-items: flex-end;
             }
         }
     </style>
@@ -99,13 +206,31 @@
 
     <main class="map-container">
         <div class="map-view">
+            <div class="map-controls">
+                <select id="privacyFilter">
+                    <option value="all">All Memories</option>
+                    <option value="public">Public Only</option>
+                    <option value="private">Private Only</option>
+                </select>
+                <div class="zoom-controls">
+                    <button id="zoomIn">+</button>
+                    <button id="zoomOut">-</button>
+                </div>
+            </div>
             <svg class="map-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
-                <!-- Simplified World Map -->
-                <path d="M150,100 L850,100 L850,400 L150,400 Z" fill="none" stroke="#2c3e50" stroke-width="2"/>
-                <!-- Sample Pins -->
-                <circle class="pin" cx="300" cy="200" r="5" data-id="1"/>
-                <circle class="pin" cx="500" cy="250" r="5" data-id="2"/>
-                <circle class="pin" cx="700" cy="300" r="5" data-id="3"/>
+                <!-- Simple World Map with Continents -->
+                <!-- North America -->
+                <path class="continent" d="M200,120 C250,100 300,90 350,100 C400,110 420,150 430,200 C440,250 430,300 400,320 C370,340 330,330 300,310 C270,290 250,260 230,220 C210,180 180,150 200,120 Z" />
+                <!-- South America -->
+                <path class="continent" d="M300,320 C330,310 360,330 380,360 C400,390 410,420 400,450 C390,480 360,490 330,480 C300,470 280,450 270,420 C260,390 270,350 300,320 Z" />
+                <!-- Europe -->
+                <path class="continent" d="M500,100 C540,90 580,100 600,130 C620,160 630,200 620,230 C610,260 590,280 560,290 C530,300 500,290 480,270 C460,250 450,220 460,190 C470,160 480,120 500,100 Z" />
+                <!-- Africa -->
+                <path class="continent" d="M520,280 C550,270 580,280 600,300 C620,320 630,350 620,380 C610,410 590,430 560,440 C530,450 500,440 480,420 C460,400 450,370 460,340 C470,310 490,290 520,280 Z" />
+                <!-- Asia -->
+                <path class="continent" d="M650,120 C700,100 750,90 800,100 C850,110 880,150 890,200 C900,250 890,300 860,340 C830,380 790,400 750,390 C710,380 680,350 660,310 C640,270 620,220 630,170 C640,140 650,120 650,120 Z" />
+                <!-- Australia -->
+                <path class="continent" d="M800,350 C830,340 860,350 880,370 C900,390 910,420 900,450 C890,480 860,490 830,480 C800,470 780,450 770,420 C760,390 770,360 800,350 Z" />
             </svg>
         </div>
         <div class="memory-panel" id="memoryPanel">

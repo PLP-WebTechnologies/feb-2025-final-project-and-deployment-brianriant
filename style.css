@@ -38,6 +38,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    z-index: 1001;
 }
 
 .nav-links {
@@ -55,6 +56,22 @@ body {
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
 /* Hero Section */
@@ -170,18 +187,38 @@ footer {
 
     .nav-links {
         display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         background-color: var(--white);
-        padding: 1rem;
+        padding: 5rem 2rem 2rem;
         flex-direction: column;
         text-align: center;
+        z-index: 1000;
     }
 
     .nav-links.active {
         display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
     }
 
     .hero h1 {

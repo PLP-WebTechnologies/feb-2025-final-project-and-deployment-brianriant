@@ -80,6 +80,106 @@
             background-color: var(--light-gray);
             cursor: not-allowed;
         }
+
+        /* Privacy Options */
+        .privacy-options {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-label {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-label:hover {
+            background: var(--background-color);
+        }
+
+        .radio-label input[type="radio"] {
+            margin-bottom: 0.5rem;
+        }
+
+        .radio-text {
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .radio-description {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* Tags */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .memory-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .memory-tag button {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .memory-tag button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Form Improvements */
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        input[type="file"] {
+            padding: 0.5rem 0;
+        }
+
+        .preview-container {
+            background: var(--background-color);
+            padding: 1rem;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -126,12 +226,34 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="memory">Memory</label>
-                    <textarea id="memory" name="memory" required></textarea>
+                    <label for="memory">Your Story</label>
+                    <textarea id="memory" name="memory" placeholder="Share your experience..." required></textarea>
                     <div class="error-message" id="memoryError">Please share your memory</div>
                 </div>
 
-                <button type="submit" class="submit-btn">Save Memory</button>
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <input type="text" id="tags" name="tags" placeholder="e.g., Food, Culture, Nature (comma separated)">
+                    <div class="tags-container"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Privacy Setting</label>
+                    <div class="privacy-options">
+                        <label class="radio-label">
+                            <input type="radio" name="privacy" value="public" checked>
+                            <span class="radio-text">Public</span>
+                            <span class="radio-description">Anyone can see this memory</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="privacy" value="private">
+                            <span class="radio-text">Private</span>
+                            <span class="radio-description">Only you can see this memory</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Pin This Memory</button>
             </form>
         </div>
     </main>
