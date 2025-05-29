@@ -49,6 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Make certain functions available globally for onclick handlers
     if (typeof window !== 'undefined') {
-        window.handleLocationSelect = handleLocationSelect;
+        window.handleLocationSelect = (displayName, lat, lng) => {
+            import('./modules/locationSearch.js').then(module => {
+                module.handleLocationSelect(displayName, lat, lng);
+            });
+        };
+        
+        window.removeTag = (tag) => {
+            import('./modules/formHandler.js').then(module => {
+                module.removeTag(tag);
+            });
+        };
     }
 });

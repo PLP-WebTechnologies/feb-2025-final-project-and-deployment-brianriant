@@ -18,8 +18,8 @@ export const elements = {
     coordinatesDisplay: document.querySelector('.coordinates-display'),
     coordinatesText: document.getElementById('coordinatesText'),
     editLocationBtn: document.getElementById('editLocation'),
-    locationInput: document.getElementById('location'),
-    searchInput: document.getElementById('locationSearch'),
+    locationSearch: document.getElementById('location'),
     searchBtn: document.getElementById('searchBtn'),
-    map: document.getElementById('map')
+    map: document.getElementById('map'),
+    submitBtn: document.getElementById('submitBtn')
 };

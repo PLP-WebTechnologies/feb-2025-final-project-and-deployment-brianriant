@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MemoryMap - Add Memory</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <style>
       .add-memory-page {
         padding: 2rem 5%;
@@ -67,7 +67,34 @@
       .form-group textarea:focus {
         border-color: var(--primary-color);
         outline: none;
-        box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        box-shadow: 0 0 0 3px var(--primary-light);
+      }
+
+      .form-group input:disabled {
+        background: var(--light-gray);
+        cursor: not-allowed;
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none !important;
+      }
+
+      .loading-spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid var(--white);
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
 
       .location-search {
@@ -377,12 +404,13 @@
               </div>
             </div>
 
-            <button type="submit" class="submit-btn">Pin This Memory</button>
+            <div class="error-message" id="submitError"></div>
+            <button type="submit" id="submitBtn" class="submit-btn">Pin This Memory</button>
           </form>
         </div>
       </div>
     </main>
 
-    <script type="module" src="/js/script.js"></script>
+    <script type="module" src="../js/script.js"></script>
   </body>
 </html>
