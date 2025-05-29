@@ -6,7 +6,7 @@ import { initializeMapInteraction } from './modules/mapInteraction.js';
 import { initializeForm } from './modules/formHandler.js';
 import { initializeLocationSearch, handleLocationSelect } from './modules/locationSearch.js';
 import { initializeMap, filterMapMarkers } from './modules/mapMarkers.js';
-import { displayMemories } from './modules/memoryDisplay.js';
+import { initializeMemoryPanel } from './modules/memoryPanel.js';
 
 // Initialize components based on current page
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,16 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Initialize location search
             initializeLocationSearch();
 
-            // Initialize privacy filter
-            elements.privacyFilter?.addEventListener('change', (e) => {
-                const privacy = e.target.value;
-                filterMapMarkers(privacy);
-                const memories = storage.getAllMemories(privacy);
-                displayMemories(memories);
-            });
-
-            // Display initial memories
-            displayMemories(storage.getAllMemories());
+            // Initialize memory panel with filter integration
+            initializeMemoryPanel();
         }
     }
 
